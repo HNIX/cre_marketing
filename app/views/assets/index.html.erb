@@ -1,38 +1,41 @@
-<h1>Listing assets</h1>
-
-<table>
+<%- model_class = Asset -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Asset %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Highlights</th>
-      <th>Size</th>
-      <th>Size type</th>
-      <th>Price</th>
-      <th>Price psf</th>
-      <th>Dnd price</th>
-      <th>Cap rate</th>
-      <th>Occupancy</th>
-      <th>Year built</th>
-      <th>Offer date</th>
-      <th>Title</th>
-      <th>Visibility</th>
-      <th>Ended</th>
-      <th>Address</th>
-      <th>Address 2</th>
-      <th>State</th>
-      <th>City</th>
-      <th>Zip</th>
-      <th>Website</th>
-      <th>Country</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:highlights) %></th>
+      <th><%= model_class.human_attribute_name(:size) %></th>
+      <th><%= model_class.human_attribute_name(:size_type) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:price_psf) %></th>
+      <th><%= model_class.human_attribute_name(:dnd_price) %></th>
+      <th><%= model_class.human_attribute_name(:cap_rate) %></th>
+      <th><%= model_class.human_attribute_name(:occupancy) %></th>
+      <th><%= model_class.human_attribute_name(:year_built) %></th>
+      <th><%= model_class.human_attribute_name(:offer_date) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:visibility) %></th>
+      <th><%= model_class.human_attribute_name(:ended) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:address_2) %></th>
+      <th><%= model_class.human_attribute_name(:state) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%= model_class.human_attribute_name(:zip) %></th>
+      <th><%= model_class.human_attribute_name(:website) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @assets.each do |asset| %>
       <tr>
+        <td><%= asset.id %></td>
         <td><%= asset.name %></td>
         <td><%= asset.description %></td>
         <td><%= asset.highlights %></td>
@@ -55,15 +58,21 @@
         <td><%= asset.zip %></td>
         <td><%= asset.website %></td>
         <td><%= asset.country %></td>
-        <td><%= asset.user %></td>
-        <td><%= link_to 'Show', asset %></td>
-        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
-        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l asset.created_at, format: :long %></td>
+        <td>
+          <%= link_to asset_path(asset), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to asset_path(asset), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Asset', new_asset_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_asset_path,
+            :class => 'btn btn-primary' %>

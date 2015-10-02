@@ -1,33 +1,142 @@
-<%= simple_form_for(@asset) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :highlights %>
-    <%= f.input :size %>
-    <%= f.input :size_type %>
-    <%= f.input :price %>
-    <%= f.input :price_psf %>
-    <%= f.input :dnd_price %>
-    <%= f.input :cap_rate %>
-    <%= f.input :occupancy %>
-    <%= f.input :year_built %>
-    <%= f.input :offer_date %>
-    <%= f.input :title %>
-    <%= f.input :visibility %>
-    <%= f.input :ended %>
-    <%= f.input :address %>
-    <%= f.input :address_2 %>
-    <%= f.input :state %>
-    <%= f.input :city %>
-    <%= f.input :zip %>
-    <%= f.input :website %>
-    <%= f.input :country %>
-    <%= f.association :user %>
+<%= form_for @asset, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :highlights, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :highlights, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :size, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :size, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :size_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :size_type, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :price_psf, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :price_psf, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :dnd_price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :dnd_price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cap_rate, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :cap_rate, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :occupancy, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :occupancy, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :year_built, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :year_built, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :offer_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :offer_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :visibility, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :visibility, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ended, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :ended, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address_2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address_2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :website, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :website, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :country, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  assets_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
