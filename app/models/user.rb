@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_many :assets
   validates_formatting_of :zip, using: :us_zip
   validates_formatting_of :phone, using: :us_phone
+  validates_formatting_of :website, using: :url
 end
