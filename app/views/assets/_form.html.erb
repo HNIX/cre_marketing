@@ -1,0 +1,33 @@
+<%= simple_form_for(@asset) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :highlights %>
+    <%= f.input :size %>
+    <%= f.input :size_type %>
+    <%= f.input :price %>
+    <%= f.input :price_psf %>
+    <%= f.input :dnd_price %>
+    <%= f.input :cap_rate %>
+    <%= f.input :occupancy %>
+    <%= f.input :year_built %>
+    <%= f.input :offer_date %>
+    <%= f.input :title %>
+    <%= f.input :visibility %>
+    <%= f.input :ended %>
+    <%= f.input :address %>
+    <%= f.input :address_2 %>
+    <%= f.input :state %>
+    <%= f.input :city %>
+    <%= f.input :zip %>
+    <%= f.input :website %>
+    <%= f.input :country %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
