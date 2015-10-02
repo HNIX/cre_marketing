@@ -1,6 +1,5 @@
-<h1>Editing email_template</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @email_template %> |
-<%= link_to 'Back', email_templates_path %>
+<%- model_class = EmailTemplate -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => EmailTemplate %></h1>
+</div>
+<%= render :partial => 'form' %>
