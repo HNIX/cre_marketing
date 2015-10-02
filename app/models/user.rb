@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   has_many :assets
   validates_formatting_of :zip, using: :us_zip
+  validates_formatting_of :phone, using: :us_phone
 end
