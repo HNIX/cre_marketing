@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :mail_campaign do
+  factory :campaign do
     
   end
 

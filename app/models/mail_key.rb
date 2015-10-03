@@ -1,2 +1,2 @@
-class MailKey < ActiveRecord::Base
+class MailKey < Smailer::Models::MailKey
 end

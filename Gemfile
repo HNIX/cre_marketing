@@ -53,6 +53,8 @@ gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'smailer'
+gem 'aasm'
+gem 'rails_admin'
 
 group :development do
   gem 'better_errors'
