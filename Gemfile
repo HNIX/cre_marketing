@@ -3,28 +3,76 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'smailer'
+gem 'aasm'
+gem 'hirefire-resource'
+gem 'aws-ses'
 
-# Use jquery as the JavaScript library
+gem 'medium-editor-rails'
+gem 'codemirror-rails'
+gem 'html_to_plain_text'
+gem 'smarter_csv'
+gem 'staccato'
+gem 'feedjira'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem "chartkick"
+gem 'groupdate'
+
+# Monitoring
+gem 'rack-timeout'
+gem 'newrelic_rpm'
+gem "sentry-raven"
+
+# Data
+gem 'pg'
+
+# Assets
+gem 'sass-rails', '~> 4.0.3'
+gem 'uglifier', '>= 1.3.0'
+gem 'haml-rails'
+gem 'simple_form'
+gem 'headjs-rails'
+
+# Javascript
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'nprogress-rails'
+
+# CoffeeScript
+gem 'coffee-rails', '~> 4.0.0'
+
+# Design
+gem 'bootstrap-sass', '3.3.5'
+gem 'bootstrap-sass-extras'
+gem 'font-awesome-rails'
+
+# Email
+gem 'premailer-rails'
+
+# Authentication
+gem 'devise', github: 'plataformatec/devise'
+gem 'cancancan'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+# Admin
+gem 'rails_admin'
+
+# Workers
+gem 'sidekiq'
+gem 'sidekiq-unique-jobs'
+gem 'sidekiq-throttler'
+gem 'devise-async'
+gem 'sinatra', require: false
+
+# Utils
+gem 'addressable'
+gem 'settingslogic'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,32 +90,45 @@ gem 'bundler'
 
 gem 'google-analytics-rails'
 gem 'binding_of_caller'
-gem 'simple_form'
-gem 'bootstrap-sass', '3.3.5'
-gem 'bootstrap-sass-extras'
 gem 'rails_config'
 gem 'delayed_job_active_record'
-gem 'devise', github: 'plataformatec/devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
-gem 'smailer'
-gem 'aasm'
-gem 'rails_admin'
+
 
 group :development do
   gem 'better_errors'
+  gem 'sdoc', '~> 0.4.0',          group: :doc
+  gem 'guard-rspec'
 end
 
 group :development, :test do
+  gem 'spring',        group: :development
+  gem 'spring-commands-rspec'
+  gem 'awesome_print'
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'poltergeist'
+  gem 'capybara-firebug'
+  gem 'zeus-parallel_tests'
+  gem 'quiet_assets'
 end
 
 group :test do
+  gem 'minitest'
   gem 'shoulda-matchers'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'rspec-sidekiq'
+end
+
+group :production do
+  gem 'mysql2'
+  gem 'dalli'
+  gem 'memcachier'
+  gem 'unicorn'
+  gem 'rails_12factor'
 end

@@ -1,2 +1,2 @@
-module MailTemplatesHelper
+module TemplatesHelper
 end
