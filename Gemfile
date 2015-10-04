@@ -57,6 +57,7 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'cancancan'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Admin
 gem 'rails_admin'
@@ -108,7 +109,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'dotenv-rails'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'ffaker'
   gem 'poltergeist'
   gem 'capybara-firebug'
